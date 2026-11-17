@@ -1,9 +1,13 @@
 {
   "name": "mikegallery",
   "private": true,
-  "workspaces": ["apps/*", "packages/*"],
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "concurrently -n api,web -c blue,green \"npm run dev -w apps/api\" \"npm run dev -w apps/web\"",
+    "predev": "npm run build -w packages/shared",
+    "dev": "concurrently -n shared,api,web -c yellow,blue,green \"npm run dev -w packages/shared\" \"npm run dev -w apps/api\" \"npm run dev -w apps/web\"",
     "build": "npm run build --workspaces --if-present"
   },
   "devDependencies": {

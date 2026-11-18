@@ -46,9 +46,7 @@ export const Navbar = () => {
         style={{ WebkitBackdropFilter: scrolled ? "blur(14px)" : "blur(0px)" }}>
         <div className={`${flexBetween} mx-auto w-7/8`}>
           {/* left logo */}
-          <Link to={Paths.HOME}>
-            <Logo />
-          </Link>
+          <Logo />
 
           {/* center navlink (desktop) */}
           {isAboveLargeScreen && <NavMenu />}
@@ -115,7 +113,7 @@ export const Navbar = () => {
                 </DropdownMenuGroup>
 
                 <DropdownMenuSeparator />
-                  {/* for un-auth user later */}
+                {/* for un-auth user later */}
                 <div className="p-2">
                   <UserMenu />
                 </div>

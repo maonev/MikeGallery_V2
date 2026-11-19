@@ -17,7 +17,7 @@ export const HeroSection = () => {
           spanning books, posters and web design.
         </p>
         <Link to={Paths.ABOUT} className="py-8 w-fit">
-          <ShinyButton className="bg-button-primary font-bold rounded-2xl text-black text-xs">
+          <ShinyButton className="bg-button-primary font-bold text-black text-xs">
             More About Me
           </ShinyButton>
         </Link>

@@ -1,15 +1,8 @@
-import { Navbar } from "@/components/navbar";
 import "./index.css";
-import { Footer } from "@/components/footer";
+import { RoutesPath } from "./routes";
 
 function App() {
-  return (
-    <div>
-      <Navbar />
-      <div className="min-h-screen"></div>
-      <Footer />
-    </div>
-  );
+  return <RoutesPath />;
 }
 
 export default App;

@@ -14,28 +14,28 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
-    src: "../../../public/projects/projects.png",
+    src: "/projects/projects.png",
     name: "Crtly",
     type: "Mobile App",
     alt: "",
   },
   {
     id: 2,
-    src: "../../../public/projects/projects.png",
+    src: "/projects/projects.png",
     name: "Crtly",
     type: "Mobile App",
     alt: "",
   },
   {
     id: 3,
-    src: "../../../public/projects/projects.png",
+    src: "/projects/projects.png",
     name: "Crtly",
     type: "Mobile App",
     alt: "",
   },
   {
     id: 4,
-    src: "../../../public/projects/projects.png",
+    src: "/projects/projects.png",
     name: "Crtly",
     type: "Mobile App",
     alt: "",
@@ -43,8 +43,6 @@ const projects: Project[] = [
 ];
 
 export const ProjectsHighlightSection = () => {
-  const project = projects;
-
   return (
     <Container>
       <div className="my-30 flex flex-col items-center justify-center gap-6">
@@ -60,8 +58,8 @@ export const ProjectsHighlightSection = () => {
           {/* background color setting */}
           {/* only take mockup png */}
           {/* later setting bg gradient */}
-          {project.map((p) => (
-            <div className="flex flex-col gap-3">
+          {projects.map((p) => (
+            <div key={p.id} className="flex flex-col gap-3">
               <Link to={Paths.PROJECTS}>
                 <img
                   src={p.src}

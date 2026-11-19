@@ -24,7 +24,7 @@ export const HeroSection = () => {
       </div>
       <div className="relative w-full max-w-sm">
         <img
-          src="../../../public/img/michaels.jpg"
+          src="/img/michaels.jpg"
           alt=""
           className="rounded-3xl object-cover object-top aspect-square md:aspect-3/4"
         />

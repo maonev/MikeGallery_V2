@@ -1,6 +1,7 @@
 import { Container } from "@/components/Container";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Paths } from "@/routes/paths";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 
 type Project = {

@@ -4,6 +4,7 @@ export type Project = {
   slug: string;
   category: string;
   imageUrl: string;
+  isFeatured: boolean
 };
 
 export type ProjectCardProps = {
@@ -19,6 +20,7 @@ export const PROJECTS: Project[] = [
     slug: "orvillebury",
     category: "Blue",
     imageUrl: "https://picsum.photos/id/10/800/600",
+    isFeatured: true,
   },
   {
     id: "2",
@@ -26,6 +28,7 @@ export const PROJECTS: Project[] = [
     slug: "west-lavada",
     category: "Green",
     imageUrl: "https://picsum.photos/id/15/800/600",
+    isFeatured: false,
   },
   {
     id: "3",
@@ -33,6 +36,7 @@ export const PROJECTS: Project[] = [
     slug: "north-katelyn",
     category: "Blue",
     imageUrl: "https://picsum.photos/id/20/800/600",
+    isFeatured: true,
   },
   {
     id: "4",
@@ -40,6 +44,7 @@ export const PROJECTS: Project[] = [
     slug: "lake-destinyland",
     category: "Green",
     imageUrl: "https://picsum.photos/id/28/800/600",
+    isFeatured: false,
   },
   {
     id: "5",
@@ -47,6 +52,7 @@ export const PROJECTS: Project[] = [
     slug: "port-jermaine",
     category: "Purple",
     imageUrl: "https://picsum.photos/id/37/800/600",
+    isFeatured: true,
   },
   {
     id: "6",
@@ -54,6 +60,7 @@ export const PROJECTS: Project[] = [
     slug: "south-veronicaport",
     category: "Blue",
     imageUrl: "https://picsum.photos/id/42/800/600",
+    isFeatured: false,
   },
   {
     id: "7",
@@ -61,6 +68,7 @@ export const PROJECTS: Project[] = [
     slug: "new-marisol",
     category: "Orange",
     imageUrl: "https://picsum.photos/id/49/800/600",
+    isFeatured: false,
   },
   {
     id: "8",
@@ -68,6 +76,7 @@ export const PROJECTS: Project[] = [
     slug: "east-emmet",
     category: "Green",
     imageUrl: "https://picsum.photos/id/54/800/600",
+    isFeatured: false,
   },
   {
     id: "9",
@@ -75,6 +84,7 @@ export const PROJECTS: Project[] = [
     slug: "west-roslyn",
     category: "Purple",
     imageUrl: "https://picsum.photos/id/60/800/600",
+    isFeatured: true,
   },
   {
     id: "10",
@@ -82,6 +92,7 @@ export const PROJECTS: Project[] = [
     slug: "lake-brionna",
     category: "Blue",
     imageUrl: "https://picsum.photos/id/76/800/600",
+    isFeatured: false,
   },
   {
     id: "11",
@@ -89,6 +100,7 @@ export const PROJECTS: Project[] = [
     slug: "north-trever",
     category: "Orange",
     imageUrl: "https://picsum.photos/id/88/800/600",
+    isFeatured: false,
   },
   {
     id: "12",
@@ -96,6 +108,7 @@ export const PROJECTS: Project[] = [
     slug: "port-carlee",
     category: "Green",
     imageUrl: "https://picsum.photos/id/103/800/600",
+    isFeatured: false,
   },
   {
     id: "13",
@@ -103,6 +116,7 @@ export const PROJECTS: Project[] = [
     slug: "san-bernardino",
     category: "Blue",
     imageUrl: "https://picsum.photos/id/119/800/600",
+    isFeatured: false,
   },
   {
     id: "14",
@@ -110,6 +124,7 @@ export const PROJECTS: Project[] = [
     slug: "fort-wayland",
     category: "Purple",
     imageUrl: "https://picsum.photos/id/128/800/600",
+    isFeatured: false,
   },
   {
     id: "15",
@@ -117,5 +132,6 @@ export const PROJECTS: Project[] = [
     slug: "mount-clarissa",
     category: "Orange",
     imageUrl: "https://picsum.photos/id/142/800/600",
+    isFeatured: false,
   },
 ];

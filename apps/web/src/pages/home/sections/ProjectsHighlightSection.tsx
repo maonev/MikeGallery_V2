@@ -1,49 +1,18 @@
 import { Container } from "@/components/Container";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { PROJECTS } from "@/data/project";
 import { Paths } from "@/routes/paths";
-import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 
-type Project = {
-  id: number;
-  src: string;
-  name: string;
-  type: string;
-  alt: string;
-};
-
-const projects: Project[] = [
-  {
-    id: 1,
-    src: "/projects/projects.png",
-    name: "Crtly",
-    type: "Mobile App",
-    alt: "",
-  },
-  {
-    id: 2,
-    src: "/projects/projects.png",
-    name: "Crtly",
-    type: "Mobile App",
-    alt: "",
-  },
-  {
-    id: 3,
-    src: "/projects/projects.png",
-    name: "Crtly",
-    type: "Mobile App",
-    alt: "",
-  },
-  {
-    id: 4,
-    src: "/projects/projects.png",
-    name: "Crtly",
-    type: "Mobile App",
-    alt: "",
-  },
-];
+const FEATURED_LIMIT = 4;
 
 export const ProjectsHighlightSection = () => {
+  const featuredProjects = PROJECTS.filter((p) => p.isFeatured).slice(
+    0,
+    FEATURED_LIMIT,
+  );
+  if (featuredProjects.length === 0) return null;
+
   return (
     <Container>
       <div className="my-30 flex flex-col items-center justify-center gap-6">
@@ -59,18 +28,17 @@ export const ProjectsHighlightSection = () => {
           {/* background color setting */}
           {/* only take mockup png */}
           {/* later setting bg gradient */}
-          {projects.map((p) => (
+          {featuredProjects.map((p) => (
             <div key={p.id} className="flex flex-col gap-3">
-              <Link to={Paths.PROJECTS}>
+              <Link to={`projects/${p.slug}`}>
                 <img
-                  src={p.src}
-                  alt={p.alt}
+                  src={p.imageUrl}
                   className="rounded-3xl object-cover object-top aspect-square xl:max-w-lg"
                 />
               </Link>
               <div className="flex flex-col gap-1 text-white">
-                <p className="text-sm">{p.name}</p>
-                <p className="text-xs">{p.type}</p>
+                <p className="text-sm">{p.title}</p>
+                <p className="text-xs">{p.category}</p>
               </div>
             </div>
           ))}

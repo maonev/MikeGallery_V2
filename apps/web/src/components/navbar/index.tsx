@@ -3,7 +3,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { UserMenu } from "./UserMenu";
 import { NavMenu } from "./NavMenu";
 import { NavLinks } from "./Navlink";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { Paths } from "@/routes/paths";
 import { Logo } from "../logo";
 import { AnimatePresence, motion } from "motion/react";
@@ -24,6 +24,10 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const isAboveLargeScreen = useMediaQuery("(min-width: 1024px)");
+
+  const { pathname } = useLocation();
+  const isActive = (href: string) =>
+    href === Paths.HOME ? pathname === href : pathname.startsWith(href);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -92,10 +96,18 @@ export const Navbar = () => {
                         render={
                           <Link
                             to={link.href}
-                            className="w-full cursor-pointer"
+                            className="w-full h-full cursor-pointer absolute"
                           />
                         }>
-                        {link.label}
+                        <span className="flex items-center justify-between w-full">
+                          {link.label}
+                          {isActive(link.href) && (
+                            <span className="relative flex size-2">
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75" />
+                              <span className="relative inline-flex size-2 rounded-full bg-yellow-400" />
+                            </span>
+                          )}
+                        </span>
                       </DropdownMenuItem>
                       {i < NavLinks.length - 1}
                     </div>

@@ -1,5 +1,10 @@
-import type { ProjectCardProps } from "@/data/project";
+import type { Project } from "@/data/project";
 import { Link } from "react-router";
+
+type ProjectCardProps = {
+  project: Project;
+  className?: string;
+};
 
 export const ProjectCard = ({ project, className = "" }: ProjectCardProps) => (
   <Link

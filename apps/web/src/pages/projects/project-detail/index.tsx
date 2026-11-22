@@ -1,6 +1,6 @@
 import { Container } from "@/components/Container";
 import { PROJECTS } from "@/data/project";
-import { ProjectDescription } from "@/features/ProjectDescription";
+import { ProjectDescription } from "@/features/project-detail/ProjectDescription";
 import { MoveUpRight } from "lucide-react";
 import { useParams } from "react-router";
 

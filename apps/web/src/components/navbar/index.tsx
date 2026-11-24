@@ -17,6 +17,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
+import { ScrollProgress } from "../scroll-progress";
 
 export const Navbar = () => {
   const flexBetween = "flex items-center justify-between";
@@ -133,6 +134,7 @@ export const Navbar = () => {
             </DropdownMenu>
           )}
         </div>
+        <ScrollProgress />
       </motion.div>
     </nav>
   );

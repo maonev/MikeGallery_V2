@@ -17,10 +17,10 @@ export const ProjectCard = ({ project, className = "" }: ProjectCardProps) => (
       className="h-64 w-full rounded-2xl object-cover md:h-72 lg:hover:scale-110 transition duration-500"
     />
     <div className="flex flex-col items-center gap-1 text-center">
-      <p className="text-[10px] font-bold uppercase tracking-widest">
-        {project.category}
+      <p className="text-[10px] font-bold uppercase tracking-widest text-gray-500">
+        {project.category}  
       </p>
-      <h2 className="text-lg font-semibold">{project.title}</h2>
+      <h2 className="text-lg font-semibold text-white">{project.title}</h2>
     </div>
   </Link>
 );

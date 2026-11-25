@@ -1,8 +1,8 @@
-// src/pages/projects/detail/ProjectPager.tsx
 import { Link } from "react-router";
-import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import { Paths } from "@/routes/paths";
 import type { Project } from "@/data/project";
+import { LeftArrow } from "@/icons/LeftArrow";
+import { RightArrow } from "@/icons/RightArrow";
 
 export const ProjectPager = ({
   prev,
@@ -13,12 +13,18 @@ export const ProjectPager = ({
 }) => (
   <nav
     aria-label="Project navigation"
-    className="flex items-center justify-between border-y border-white/20 py-5 text-[10px] text-white font-bold uppercase tracking-widest md:text-xs">
+    className="flex items-center justify-between py-5 text-[10px] text-white font-bold uppercase">
     {prev ? (
       <Link
         to={Paths.PROJECTS_DETAIL(prev.slug)}
-        className="flex items-center gap-3">
-        <FaArrowLeftLong aria-hidden /> Previous work
+        className="group flex items-end gap-3">
+        <LeftArrow
+          aria-hidden
+          className="transition-transform duration-300 ease-out group-hover:-translate-x-2"
+        />
+        <span className="transition-transform duration-300 ease-out group-hover:translate-x-2">
+          Previous Work
+        </span>
       </Link>
     ) : (
       <span />
@@ -26,8 +32,14 @@ export const ProjectPager = ({
     {next ? (
       <Link
         to={Paths.PROJECTS_DETAIL(next.slug)}
-        className="flex items-center gap-3">
-        Next work <FaArrowRightLong aria-hidden />
+        className="group flex items-start gap-3">
+        <span className="transition-transform duration-300 ease-out group-hover:-translate-x-2">
+          Next work
+        </span>
+        <RightArrow
+          aria-hidden
+          className="transition-transform duration-300 ease-out group-hover:translate-x-2"
+        />
       </Link>
     ) : (
       <span />

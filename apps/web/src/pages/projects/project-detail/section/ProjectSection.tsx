@@ -16,14 +16,14 @@ export const ProjectSection = ({ section }: { section: SectionProject }) => {
             src={url}
             alt={`${section.title}`}
             loading="lazy"
-            className="aspect-4/3 w-full rounded-2xl object-cover"
+            className="aspect-video w-full rounded-lg object-cover"
           />
         ))}
       </div>
 
-      <div className="flex flex-col gap-3 md:px-10">
+      <div className="flex flex-col gap-3 md:px-20 lg:px-45">
         <h2 className="text-xl font-semibold md:text-2xl text-white lg:text-4xl">{section.title}</h2>
-        <p className="text-sm leading-relaxed text-white/70 text-justify lg:text-base">
+        <p className="text-xs leading-relaxed text-white/70 md:text-sm">
           {section.description}
         </p>
       </div>
